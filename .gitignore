@@ -1,0 +1,17 @@
+# 🔑 Environment Variables
+/backend/.env
+/frontend/.env
+
+# 📦 Dependency Folders
+# Ignore all node_modules directories
+node_modules
+
+# ⚙️ Build/Output Directories
+# Ignore compiled code (common for many projects)
+/backend/dist
+/frontend/build
+/frontend/dist
+
+# 🐞 Logs and Caches
+npm-debug.log
+.DS_Store

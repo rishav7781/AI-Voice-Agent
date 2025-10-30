@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.78.0",
+    "axios": "^1.13.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^17.2.3",
+    "express": "~4.16.1",
+    "express-async-handler": "^1.2.0",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "livekit-client": "^2.15.14",
+    "livekit-server-sdk": "^2.14.0",
+    "morgan": "~1.9.1",
+    "openai": "^6.7.0"
+  }
+}
