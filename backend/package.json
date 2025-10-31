@@ -7,9 +7,11 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@livekit/agents": "^0.7.9",
     "@supabase/supabase-js": "^2.78.0",
     "axios": "^1.13.1",
     "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
     "debug": "~2.6.9",
     "dotenv": "^17.2.3",
     "express": "~4.16.1",
