@@ -10,6 +10,7 @@ const dbTestRouter = require('./routes/dbTest');
 
 const livekitRouter = require('./routes/livekit');
 const agentRouter = require('./routes/agent');
+const supervisorRouter = require('./routes/supervisor');
 
 
 const app = express();
@@ -37,6 +38,7 @@ app.use('/db', dbTestRouter); // route working
 
 app.use('/api', livekitRouter);
 app.use('/api/agent', agentRouter);
+app.use('/api/supervisor', supervisorRouter);
 
 
 // error handlers

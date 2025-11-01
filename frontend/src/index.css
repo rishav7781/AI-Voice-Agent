@@ -3,9 +3,10 @@
   line-height: 1.5;
   font-weight: 400;
 
+  /* Default to a light theme so text is dark on light backgrounds */
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  color: #213547; /* main text color */
+  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -54,15 +55,46 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
+/* Dark theme overrides */
+@media (prefers-color-scheme: dark) {
   :root {
-    color: #213547;
-    background-color: #ffffff;
+    color: rgba(255, 255, 255, 0.92);
+    background-color: #242424;
   }
   a:hover {
-    color: #747bff;
+    color: #aab2ff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #1a1a1a;
   }
+}
+
+/* LiveKit wrapper overrides: ensure controls and labels are visible on light backgrounds */
+.livekit-wrapper,
+.livekit-wrapper * {
+  color: #213547 !important;
+}
+.livekit-wrapper svg,
+.livekit-wrapper svg path,
+.livekit-wrapper svg circle {
+  fill: #213547 !important;
+  stroke: #213547 !important;
+}
+.livekit-wrapper button,
+.livekit-wrapper .lk-button,
+.livekit-wrapper .lk-control {
+  background-color: #fff !important;
+  color: #213547 !important;
+  border: 1px solid #e6e6e6 !important;
+}
+.livekit-wrapper .lk-control .label,
+.livekit-wrapper .lk-button .label {
+  color: #213547 !important;
+}
+
+/* Force contrast for any white-background components inside LiveKit */
+.livekit-wrapper [style*="background: white"],
+.livekit-wrapper [style*="background:#fff"],
+.livekit-wrapper [style*="background:#ffffff"] {
+  color: #213547 !important;
 }
