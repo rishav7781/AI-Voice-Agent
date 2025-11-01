@@ -168,30 +168,45 @@ router.get('/token', asyncHandler(async (req, res) => {
 //     res.json(response);
 // }));
 
+// router.post("/query", async (req, res) => {
+//   const { query } = req.body;
+
+//   if (!query) return res.status(400).json({ success: false, message: "Missing query" });
+
+//   console.log("🤖 User asked:", query);
+
+//   // Simulate a simple local AI logic
+//   let response;
+//   if (query.toLowerCase().includes("refund")) {
+//     response = "Our refund policy allows refunds within 7 days of purchase.";
+//   } else if (query.toLowerCase().includes("hello")) {
+//     response = "Hi there! How can I assist you today?";
+//   } else {
+//     response = "I'm your AI assistant — still learning more responses each day!";
+//   }
+
+//   // Simulate escalation detection
+//   if (query.toLowerCase().includes("supervisor")) {
+//     console.log("🤖 Escalating to supervisor →", query);
+//   }
+
+//   res.json({ success: true, response });
+// });
+
 router.post("/query", async (req, res) => {
-  const { query } = req.body;
+  const { message } = req.body;
 
-  if (!query) return res.status(400).json({ success: false, message: "Missing query" });
+  // Basic mock intelligence
+  let reply = "I’m not sure I understand.";
+  if (message.toLowerCase().includes("hello")) reply = "Hi there! How can I help you today?";
+  else if (message.toLowerCase().includes("refund"))
+    reply = "Our refund policy allows returns within 30 days.";
+  else if (message.toLowerCase().includes("time"))
+    reply = `It's currently ${new Date().toLocaleTimeString()}.`;
 
-  console.log("🤖 User asked:", query);
-
-  // Simulate a simple local AI logic
-  let response;
-  if (query.toLowerCase().includes("refund")) {
-    response = "Our refund policy allows refunds within 7 days of purchase.";
-  } else if (query.toLowerCase().includes("hello")) {
-    response = "Hi there! How can I assist you today?";
-  } else {
-    response = "I'm your AI assistant — still learning more responses each day!";
-  }
-
-  // Simulate escalation detection
-  if (query.toLowerCase().includes("supervisor")) {
-    console.log("🤖 Escalating to supervisor →", query);
-  }
-
-  res.json({ success: true, response });
+  res.json({ reply });
 });
+
 
 // ✅ 3. Simple Health Check
 router.get('/', (req, res) => {
