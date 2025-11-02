@@ -206,9 +206,9 @@ export default function AgentRoom() {
                 import.meta.env.VITE_LIVEKIT_URL ||
                 "wss://voice-agent-zn1rmlew.livekit.cloud"
               }
-              connect
-              video
-              audio
+              connect={true}
+              video={false}
+              audio={true}
               style={{ height: '100%', minHeight: 300 }}
             >
               <VideoConference />
