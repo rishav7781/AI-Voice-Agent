@@ -138,7 +138,7 @@ export default function AgentRoom() {
     fetchToken();
   }, []);
 
-  // 🎙️ Start Speech Recognition
+  // Start Speech Recognition
   const startListening = () => {
     recognition.start();
 
@@ -175,7 +175,7 @@ export default function AgentRoom() {
     }
   };
 
-  // 🔊 Speak AI's Response
+  // speak AI's Response
   const speakText = (text) => {
     // stop any previous ongoing speech
     window.speechSynthesis.cancel();
@@ -258,7 +258,7 @@ export default function AgentRoom() {
         </div>
       </div>
 
-      {/* 🎙️ Floating Talk Button */}
+      {/*Floating Talk Button */}
       <button
         onClick={startListening}
         style={{
